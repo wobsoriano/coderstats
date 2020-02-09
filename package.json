@@ -1,5 +1,6 @@
 {
-  "name": "svelte-app",
+  "name": "coderstats",
+  "description": "Pretty GitHub statistics and profile.",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
