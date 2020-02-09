@@ -1,6 +1,6 @@
 {
   "name": "coderstats",
-  "description": "Pretty GitHub statistics and profile.",
+  "description": "Data visualizations of your top languages, starred repositories and top repos.",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
