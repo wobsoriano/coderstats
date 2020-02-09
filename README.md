@@ -2,7 +2,7 @@
 
 Pretty GitHub statistics and profile.
 
-![demo](https://coderstats.netlify.com/og.png)
+![demo](https://media.giphy.com/media/KCTEBd2ntCobSE1Jt3/giphy.gif)
 
 Built with:
 
