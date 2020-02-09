@@ -5,7 +5,7 @@
   export let public_repos = 0;
   export let followers = 0;
   export let following = 0;
-  export let avatar_url;
+  export let avatar_url = "";
   export let login = "";
   export let name = "";
   export let location = "";

@@ -3,6 +3,7 @@
   import UserInfo from "../components/UserInfo.svelte";
   import Charts from "../components/Charts.svelte";
   import Repos from "../components/Repos.svelte";
+  import Footer from "../components/Footer.svelte";
   import GithubError from "../components/GithubError.svelte";
   import GitHub from "github-api";
   import queryString from "query-string";
@@ -44,4 +45,5 @@
   <UserInfo {...profile} {profileLoading} />
   <Charts {repos} {reposLoading} />
   <Repos {repos} {reposLoading} />
+  <Footer />
 {/if}
