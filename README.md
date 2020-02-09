@@ -1,6 +1,6 @@
 # Coderstats
 
-Pretty GitHub statistics and profile.
+Data visualizations of your top languages, starred repositories and top repos.
 
 ![demo](https://media.giphy.com/media/KCTEBd2ntCobSE1Jt3/giphy.gif)
 
