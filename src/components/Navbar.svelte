@@ -18,9 +18,17 @@
 </script>
 
 <style>
-  .navbar-item:hover,
-  .navbar-item:active {
-    background: inherit;
+  .no-color-on-tap {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .navbar-menu .navbar-item:hover,
+  .navbar-menu .navbar-item:active {
+    background-color: transparent;
+  }
+
+  .navbar-burger:hover {
+    background-color: transparent;
   }
 </style>
 
@@ -35,7 +43,8 @@
         Coderstats
       </a>
       <span
-        class="has-text-grey-light navbar-burger burger {isActive ? 'is-active' : ''}"
+        class="has-text-grey-light navbar-burger burger {isActive ? 'is-active' : ''}
+        no-color-on-tap"
         data-target="navbarMenuHero"
         on:click={() => (isActive = !isActive)}>
         <span />
@@ -48,11 +57,16 @@
       class="navbar-menu {isActive ? 'is-active' : ''}"
       style="background: {isActive ? '#393e46' : 'inherit'}">
       <div class="navbar-end">
-        <a use:link href="/" class="navbar-item has-text-grey-light">Home</a>
+        <a
+          use:link
+          href="/"
+          class="navbar-item has-text-grey-light no-color-on-tap">
+          Home
+        </a>
         <a
           href="https://github.com/sorxrob/coderstats"
           target="_BLANK"
-          class="navbar-item has-text-grey-light">
+          class="navbar-item has-text-grey-light no-color-on-tap">
           Github
         </a>
       </div>

@@ -1,5 +1,6 @@
 <script>
   import { navigate } from "svelte-routing";
+  import { onMount } from "svelte";
 
   let username = "";
   const handleSubmit = e => {
@@ -8,6 +9,10 @@
 
     navigate(`/user?name=${username}`);
   };
+
+  onMount(() => {
+    document.getElementById("search").focus();
+  });
 </script>
 
 <style>
