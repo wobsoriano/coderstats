@@ -1,69 +1,83 @@
 <script>
   import { afterUpdate } from "svelte";
-  import ApexCharts from "apexcharts";
-  import languageColors from "../language_colors.json";
+  import Chart from "chart.js/dist/Chart.js";
+  import { randomColor } from "../utils";
+  import langColors from "../utils/langColors.js";
   export let repos = [];
   export let reposLoading;
 
   function createTopLanguagesChart() {
     if (!repos.length) return;
-    const options = {
-      chart: {
-        type: "pie"
+    const ctx = document.getElementById("top-languages").getContext("2d");
+    const opts = {
+      type: "pie",
+      responsive: true,
+      maintainAspectRatio: false,
+      data: {
+        labels: [],
+        datasets: [
+          {
+            data: [],
+            backgroundColor: []
+          }
+        ]
       },
-      series: [],
-      labels: [],
-      colors: []
+      options: {
+        legend: {
+          position: "right"
+        }
+      }
     };
 
     repos
       .filter(i => i.language)
       .forEach(repo => {
-        const idx = options.labels.indexOf(repo.language);
+        const idx = opts.data.labels.indexOf(repo.language);
         if (idx !== -1) {
-          options.series[idx]++;
+          opts.data.datasets[0].data[idx]++;
         } else {
-          options.labels.push(repo.language);
-          options.series.push(1);
-          options.colors.push(repo.languageColor);
+          opts.data.labels.push(repo.language);
+          opts.data.datasets[0].data.push(1);
+          opts.data.datasets[0].backgroundColor.push(repo.languageColor);
         }
       });
 
-    const chart = new ApexCharts(
-      document.getElementById("top-languages"),
-      options
-    );
-    chart.render();
+    const chart = new Chart(ctx, opts);
   }
 
   function createMostStarredChart() {
     if (!repos.length) return;
+    const ctx = document.getElementById("most-starred").getContext("2d");
     const mostStarred = repos.sort(
       (a, b) => b.stargazers_count - a.stargazers_count
     );
-    const options = {
-      chart: {
-        type: "bar"
+    const opts = {
+      type: "bar",
+      responsive: true,
+      maintainAspectRatio: false,
+      data: {
+        labels: mostStarred.map(i => i.name).slice(0, 5),
+        datasets: [
+          {
+            label: "Most Starred",
+            data: mostStarred.map(i => i.stargazers_count).slice(0, 5),
+            backgroundColor: [...Array(5)].map(i => randomColor())
+          }
+        ]
       },
-      series: [
-        {
-          name: "most starred",
-          data: mostStarred.map(i => i.stargazers_count).slice(0, 5)
+      options: {
+        legend: {
+          display: false
         }
-      ],
-      xaxis: {
-        categories: mostStarred.map(i => i.name).slice(0, 5)
       }
     };
-    const chart = new ApexCharts(
-      document.getElementById("most-starred"),
-      options
-    );
-    chart.render();
+    new Chart(ctx, opts);
   }
 
   function createStarsPerLanguageChart() {
     if (!repos.length) return;
+
+    const ctx = document.getElementById("stars-per-language").getContext("2d");
 
     const languages = [];
 
@@ -83,21 +97,27 @@
       });
 
     const sorted = languages.sort((a, b) => b.stars - a.stars);
-
-    const options = {
-      chart: {
-        type: "donut"
+    const opts = {
+      type: "doughnut",
+      responsive: true,
+      maintainAspectRatio: false,
+      data: {
+        labels: sorted.map(i => i.lang),
+        datasets: [
+          {
+            data: sorted.map(i => i.stars),
+            backgroundColor: sorted.map(i => i.color)
+          }
+        ]
       },
-      series: sorted.map(i => i.stars),
-      labels: sorted.map(i => i.lang),
-      colors: sorted.map(i => i.color)
+      options: {
+        legend: {
+          position: "right"
+        }
+      }
     };
 
-    const chart = new ApexCharts(
-      document.getElementById("stars-per-language"),
-      options
-    );
-    chart.render();
+    const chart = new Chart(ctx, opts);
   }
 
   function createCharts() {
@@ -120,7 +140,7 @@
               {#if reposLoading}
                 Please wait...
               {:else}
-                <div id="top-languages" />
+                <canvas id="top-languages" height="260" />
               {/if}
             </div>
           </div>
@@ -134,7 +154,7 @@
               {#if reposLoading}
                 Please wait...
               {:else}
-                <div id="most-starred" />
+                <canvas id="most-starred" height="260" />
               {/if}
             </div>
           </div>
@@ -148,7 +168,7 @@
               {#if reposLoading}
                 Please wait...
               {:else}
-                <div id="stars-per-language" />
+                <canvas id="stars-per-language" height="260" />
               {/if}
             </div>
           </div>

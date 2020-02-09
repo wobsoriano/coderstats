@@ -10,7 +10,7 @@
       Built with
       <a href="https://svelte.dev/">Svelte</a>
       ·
-      <a href="https://apexcharts.com/">ApexCharts.js</a>
+      <a href="https://www.chartjs.org/">Chart.js</a>
       ·
       <a href="https://www.npmjs.com/package/github-api">Github API Wrapper</a>
     </p>

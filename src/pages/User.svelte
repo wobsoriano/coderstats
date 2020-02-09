@@ -7,7 +7,7 @@
   import GithubError from "../components/GithubError.svelte";
   import GitHub from "github-api";
   import queryString from "query-string";
-  import languageColors from "../language_colors.json";
+  import langColors from "../utils/langColors.js";
   const gh = new GitHub();
   let profile = {};
   let repos = [];
@@ -16,8 +16,6 @@
   let githubError = "";
   const queryParams = queryString.parse(location.search);
   const user = gh.getUser(queryParams.name);
-  const randomColor = () =>
-    "#" + Math.floor(Math.random() * 16777215).toString(16);
   onMount(async () => {
     profileLoading = true;
     reposLoading = true;
@@ -25,7 +23,7 @@
       profile = (await user.getProfile()).data;
       repos = (await user.listRepos({ type: "owner" })).data.map(i => ({
         ...i,
-        languageColor: languageColors[i.language] || randomColor()
+        languageColor: langColors[i.language]
       }));
     } catch (e) {
       if (e.response && e.response.status === 404) {
