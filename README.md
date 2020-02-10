@@ -2,7 +2,7 @@
 
 Data visualizations of your top languages, starred repositories and top repos.
 
-![demo](https://media.giphy.com/media/KCTEBd2ntCobSE1Jt3/giphy.gif)
+![demo](https://media.giphy.com/media/XFjMsqgW5K5nW03ivP/giphy.gif)
 
 This is a clone of [bchiang7's Octoprofile](https://github.com/bchiang7/octoprofile) and is built with:
 
