@@ -136,7 +136,9 @@
         <div class="card is-full-width">
           <div class="card-content">
             <div class="content">
-              <h1 class="title is-4">Top Languages</h1>
+              <h1 class="title is-4-desktop is-6-tablet is-12-mobile">
+                Top Languages
+              </h1>
               {#if reposLoading}
                 Please wait...
               {:else}
@@ -150,7 +152,9 @@
         <div class="card is-full-width">
           <div class="card-content">
             <div class="content">
-              <h1 class="title is-4">Most Starred</h1>
+              <h1 class="title is-4-desktop is-6-tablet is-12-mobile">
+                Most Starred
+              </h1>
               {#if reposLoading}
                 Please wait...
               {:else}
@@ -164,7 +168,9 @@
         <div class="card is-full-width">
           <div class="card-content">
             <div class="content">
-              <h1 class="title is-4">Stars per Language</h1>
+              <h1 class="title is-4-desktop is-6-tablet is-12-mobile">
+                Stars per Language
+              </h1>
               {#if reposLoading}
                 Please wait...
               {:else}

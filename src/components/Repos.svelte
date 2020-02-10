@@ -15,13 +15,13 @@
     <div class="columns is-multiline">
       {#if reposLoading}
         {#each Array(limit) as _, i}
-          <div class="column is-4">
+          <div class="column is-4-desktop is-6-tablet is-12-mobile">
             <RepoSkeleton />
           </div>
         {/each}
       {:else}
         {#each reposComputed as repo (repo.id)}
-          <div class="column is-flex is-4">
+          <div class="column is-flex is-4-desktop is-6-tablet is-12-mobile">
             <Repo
               name={repo.name}
               description={repo.description}
