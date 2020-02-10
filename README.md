@@ -4,7 +4,7 @@ Data visualizations of your top languages, starred repositories and top repos.
 
 ![demo](https://media.giphy.com/media/KCTEBd2ntCobSE1Jt3/giphy.gif)
 
-This is a clone of ![bchiang7's Octoprofile](https://github.com/bchiang7/octoprofile) and is built with:
+This is a clone of [bchiang7's Octoprofile](https://github.com/bchiang7/octoprofile) and is built with:
 
 - [Svelte](https://svelte.dev/)
 - [GitHub.js](https://www.npmjs.com/package/github-api)
