@@ -24,3 +24,9 @@ This is a clone of [bchiang7's Octoprofile](https://github.com/bchiang7/octoprof
    ```bash
    npm run dev
    ```
+
+## License & copyright
+
+© Robert C Soriano
+
+Licensed under the [MIT License](LICENSE).
