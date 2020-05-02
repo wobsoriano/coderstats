@@ -2,6 +2,7 @@
   import { format, parseISO } from "date-fns";
   import { Skeleton } from "svelte-loading-skeleton";
   import Navbar from "./Navbar.svelte";
+  import { numberWithCommas } from "../utils";
   export let public_repos = 0;
   export let followers = 0;
   export let following = 0;
@@ -84,17 +85,23 @@
         </div>
         <div class="stats">
           <div class="stats__item">
-            <span class="has-text-white is-size-4-desktop">{public_repos}</span>
+            <span class="has-text-white is-size-4-desktop">
+              {numberWithCommas(public_repos)}
+            </span>
             <br />
             <span class="has-text-grey is-size-7-mobile">Repositories</span>
           </div>
           <div class="stats__item">
-            <span class="has-text-white is-size-4-desktop">{followers}</span>
+            <span class="has-text-white is-size-4-desktop">
+              {numberWithCommas(followers)}
+            </span>
             <br />
             <span class="has-text-grey is-size-7-mobile">Followers</span>
           </div>
           <div class="stats__item">
-            <span class="has-text-white is-size-4-desktop">{following}</span>
+            <span class="has-text-white is-size-4-desktop">
+              {numberWithCommas(following)}
+            </span>
             <br />
             <span class="has-text-grey is-size-7-mobile">Following</span>
           </div>
