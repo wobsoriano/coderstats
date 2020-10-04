@@ -34,4 +34,4 @@ Licensed under the [MIT License](LICENSE).
 ## Acknowledgments
 
 * Clone of bchiang7's React project [Octoprofile](https://github.com/bchiang7/octoprofile)
-* Hat tip to anyone whos module was used
+* Hat tip to anyone whose module was used
