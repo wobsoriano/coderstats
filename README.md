@@ -25,13 +25,13 @@ Data visualizations of your top languages, starred repositories and top repos.
 - [Chart.js](https://www.chartjs.org/)
 - [Bulma](https://bulma.io/)
 
-## License & copyright
+## License & Copyright
 
 © Robert C Soriano
 
 Licensed under the [MIT License](LICENSE).
 
-## Acknowledgments
+## Acknowledgements
 
-* Clone of bchiang7's React project [Octoprofile](https://github.com/bchiang7/octoprofile)
-* Hat tip to anyone whos module was used
+* Clone of Brittany Chiang's React project [Octoprofile](https://github.com/bchiang7/octoprofile)
+* Hat tip to anyone whose module was used
